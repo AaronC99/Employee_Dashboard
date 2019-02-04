@@ -1,0 +1,104 @@
+<div class="container">
+    <mat-card class="checkIn">
+    <mat-card-title>Check In</mat-card-title>
+    <table mat-table [dataSource]="CheckIn" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- No Column -->
+        <ng-container matColumnDef="no">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{ element.no }} </td>
+        </ng-container>
+      
+        <!-- StaffID Column -->
+        <ng-container matColumnDef="staffID">
+          <th mat-header-cell *matHeaderCellDef> Staff ID </th>
+          <td mat-cell *matCellDef="let element"> {{ element.staffID }} </td>
+        </ng-container>
+      
+        <!-- Time Column -->
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef> Time </th>
+          <td mat-cell *matCellDef="let element"> {{ element.time }} </td>
+        </ng-container>
+      
+        <!-- Status Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{ element.status }} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  </mat-card>
+
+  <mat-card class="mc">
+    <mat-card-title>Medical Leave</mat-card-title>
+    
+    <table mat-table [dataSource]="MC_Table" class="mat-elevation-z8">
+      <!-- StaffID Column -->
+      <ng-container matColumnDef="staffID">
+        <th mat-header-cell *matHeaderCellDef>Staff ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.staffID }}</td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{ element.status }} </td>
+        </ng-container>
+      
+      <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+
+    </table>
+  
+  </mat-card>
+  
+  <mat-card class="al">
+    <mat-card-title>Annual Leave</mat-card-title>
+    <table mat-table [dataSource]="AL_Table" class="mat-elevation-z8">
+        <!-- StaffID Column -->
+        <ng-container matColumnDef="staffID">
+          <th mat-header-cell *matHeaderCellDef>Staff ID</th>
+          <td mat-cell *matCellDef="let element">{{ element.staffID }}</td>
+        </ng-container>
+
+        <!-- Status Column -->
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{ element.status }} </td>
+          </ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+  
+      </table>
+  </mat-card>
+  
+  <mat-card class="pending">
+      <mat-card-title>Pending</mat-card-title>
+      <table mat-table [dataSource]="Pending" class="mat-elevation-z8">
+        <!-- No Column -->
+          <ng-container matColumnDef="no">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{ element.no }} </td>
+            </ng-container>
+        <!-- StaffID Column -->
+          <ng-container matColumnDef="staffID">
+            <th mat-header-cell *matHeaderCellDef>Staff ID</th>
+            <td mat-cell *matCellDef="let element">{{ element.staffID }}</td>
+          </ng-container>
+          
+          
+          <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns3;"></tr>
+    
+        </table>
+    </mat-card>
+
+
+</div>

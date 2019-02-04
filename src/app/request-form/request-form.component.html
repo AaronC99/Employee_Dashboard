@@ -1,0 +1,46 @@
+<div class="container">
+  <form [formGroup]="reqForm" (ngSubmit)="onSubmit()">
+    <!-- <div class= "formGroup"> -->
+    <h2 mat-dialog-title>Request leave</h2>
+    <mat-dialog-content>
+<!--Domain ID input-->
+  <mat-form-field>
+    <div class="form-group" [ngClass]="{ 'is-invalid': reqForm.get('staffID').errors}">
+      <input matInput placeholder="Domain ID" formControlName="staffID" />
+  </div>
+  </mat-form-field>
+  <br>
+  <!--Leave option-->
+  <mat-form-field>
+      <mat-select placeholder="Select Leave" #leaveSelect formControlName="leaveSelect">
+        <mat-option aria-placeholder="Select Leave" style="color: lightgrey;" >-- Select Leave--</mat-option>  
+        <mat-option value="Medical Leave">Medical Leave</mat-option>
+        <mat-option value="Annual Leave">Annual Leave</mat-option>
+      </mat-select>
+    </mat-form-field>
+  <br>
+  <!--From Date Selector-->
+  <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="From" formControlName="fromDate"/>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <br>
+  <!--To Date Selector-->
+  <mat-form-field>
+      <input matInput [matDatepicker]="picker1" placeholder="To" formControlName="toDate"/>
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+</mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button class="close" (click)='close()'>Cancel</button>
+      <span></span>
+    <button mat-raised-button class="request" (click)='request()' type="submit">Request</button>
+  </mat-dialog-actions>
+
+<!-- </div> -->
+</form>
+</div>

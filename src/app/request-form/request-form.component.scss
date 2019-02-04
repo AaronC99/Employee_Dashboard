@@ -1,0 +1,32 @@
+button{ 
+    width: 50%;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 12px;
+    //padding: 30px;
+
+}
+.close{
+    &:hover{
+        background-color: darkgrey;
+    }
+}
+
+.container{
+    width: 450px;
+    .request{
+        background-color: rgb(92, 206, 92);
+        color: black;
+        justify-content: right;
+        //right:510px;
+        display: inline;
+        &:hover{
+            background-color: lightgreen;
+        }
+    }
+    .error{
+        color:red;
+        font-size: 11px;
+    }
+
+}

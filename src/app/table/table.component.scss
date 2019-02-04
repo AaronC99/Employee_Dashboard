@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+  }
+.container{
+  justify-content: center;
+  align-content: center;
+  padding: 40px;
+  display: flex;
+  
+  .mat-card{
+    width: 45%;
+    background-color:lightgrey;
+  }
+  .mc{
+    width: 15%;
+  }
+  .al{
+    width: 15%;
+  }
+  .pending{
+    width: 15%;
+  }
+}
+
+.top{
+  padding-left: 40px;
+  padding-bottom: 10px;
+  text-align: center;
+}
