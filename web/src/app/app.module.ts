@@ -9,6 +9,7 @@ import { MatTableModule } from '@angular/material/table';
 import { HeaderComponent } from './header/header.component';
 import { MatInputModule, MatToolbarModule, MatSelectModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -18,8 +19,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-//import { MatRangeDatepickerModule } from '@angular/material';
-//import { MatRangeNativeDateModule} from '@angular/material';
+import { HttpService } from './http.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
     MatInputModule,
@@ -44,14 +45,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
-    //MatRangeDatepickerModule, 
-    //MatRangeNativeDateModule,
     MatDatepickerModule
   ],
   entryComponents: [
     RequestFormComponent
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

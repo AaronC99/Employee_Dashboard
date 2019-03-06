@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../http.service';
 import { MatTableDataSource, MAT_AUTOCOMPLETE_DEFAULT_OPTIONS_FACTORY } from '@angular/material';
 import { Time } from '@angular/common';
 import {React} from 'react';
@@ -65,13 +66,22 @@ export class TableComponent implements OnInit {
   displayedColumns1: string[] = ['staffID' , 'status'];
   displayedColumns2: string[] = ['staffID' , 'status'];
   displayedColumns3: string[] = ['no', 'staffID'];
-  CheckIn = ELEMENT_DATA;
+  checkIn = ELEMENT_DATA;
   MC_Table = JSON.parse(localStorage.getItem('MC_SAVED'));
   AL_Table = JSON.parse(localStorage.getItem('AL_SAVED'));
   Pending = PENDING_DATA;
 
-  constructor() {}
+  constructor(private httpService: HttpService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getAllEmployeeData();
+  }
+
+  public getAllEmployeeData() {
+    this.httpService.getAllEmployeeData().then((data: CheckIn[]) => {
+      this.checkIn = data;
+      console.log(data);
+    });
+  }
 
 }
