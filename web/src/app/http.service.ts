@@ -5,11 +5,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
-  apiURL: 'http://localhost:3003/api/attendance';
+  apiURL = 'http://localhost:3003';
 
   constructor(private httpClient: HttpClient) { }
+
   getAllEmployeeData() {
     return this.httpClient.get(`${this.apiURL}/api/attendance`).toPromise();
-
   }
 }
