@@ -435,7 +435,7 @@ var RequestFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n    <mat-card class=\"checkIn\">\n    <mat-card-title>Check In</mat-card-title>\n    <table mat-table [dataSource]=\"checkIn\" class=\"mat-elevation-z8\">\n\n        <!--- Note that these columns can be defined in any order.\n              The actual rendered columns are set as a property on the row definition\" -->\n      \n        <!-- No Column -->\n        <ng-container matColumnDef=\"no\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.no }} </td>\n        </ng-container>\n      \n        <!-- StaffID Column -->\n        <ng-container matColumnDef=\"staffID\">\n          <th mat-header-cell *matHeaderCellDef> Staff ID </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.staffID }} </td>\n        </ng-container>\n      \n        <!-- Time Column -->\n        <ng-container matColumnDef=\"time\">\n          <th mat-header-cell *matHeaderCellDef> Time </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.time }} </td>\n        </ng-container>\n      \n        <!-- Status Column -->\n        <ng-container matColumnDef=\"status\">\n          <th mat-header-cell *matHeaderCellDef> Status </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.status }} </td>\n        </ng-container>\n      \n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n      </table>\n  </mat-card>\n\n  <mat-card class=\"mc\">\n    <mat-card-title>Medical Leave</mat-card-title>\n    \n    <table mat-table [dataSource]=\"MC_Table\" class=\"mat-elevation-z8\">\n      <!-- StaffID Column -->\n      <ng-container matColumnDef=\"staffID\">\n        <th mat-header-cell *matHeaderCellDef>Staff ID</th>\n        <td mat-cell *matCellDef=\"let element\">{{ element.staffID }}</td>\n      </ng-container>\n\n      <!-- Status Column -->\n      <ng-container matColumnDef=\"status\">\n          <th mat-header-cell *matHeaderCellDef> Status </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.status }} </td>\n        </ng-container>\n      \n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns1\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns1;\"></tr>\n\n    </table>\n  \n  </mat-card>\n  \n  <mat-card class=\"al\">\n    <mat-card-title>Annual Leave</mat-card-title>\n    <table mat-table [dataSource]=\"AL_Table\" class=\"mat-elevation-z8\">\n        <!-- StaffID Column -->\n        <ng-container matColumnDef=\"staffID\">\n          <th mat-header-cell *matHeaderCellDef>Staff ID</th>\n          <td mat-cell *matCellDef=\"let element\">{{ element.staffID }}</td>\n        </ng-container>\n\n        <!-- Status Column -->\n        <ng-container matColumnDef=\"status\">\n            <th mat-header-cell *matHeaderCellDef> Status </th>\n            <td mat-cell *matCellDef=\"let element\"> {{ element.status }} </td>\n          </ng-container>\n        \n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns2\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns2;\"></tr>\n  \n      </table>\n  </mat-card>\n  \n  <mat-card class=\"pending\">\n      <mat-card-title>Pending</mat-card-title>\n      <table mat-table [dataSource]=\"Pending\" class=\"mat-elevation-z8\">\n        <!-- No Column -->\n          <ng-container matColumnDef=\"no\">\n              <th mat-header-cell *matHeaderCellDef> No. </th>\n              <td mat-cell *matCellDef=\"let element\"> {{ element.no }} </td>\n            </ng-container>\n        <!-- StaffID Column -->\n          <ng-container matColumnDef=\"staffID\">\n            <th mat-header-cell *matHeaderCellDef>Staff ID</th>\n            <td mat-cell *matCellDef=\"let element\">{{ element.staffID }}</td>\n          </ng-container>\n          \n          \n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns3\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns3;\"></tr>\n    \n        </table>\n    </mat-card>\n\n\n</div>"
+module.exports = "<div class=\"container\">\n    <mat-card class=\"checkIn\">\n    <mat-card-title>Check In</mat-card-title>\n    <table mat-table [dataSource]=\"checkIn\" class=\"mat-elevation-z8\">\n\n        <!--- Note that these columns can be defined in any order.\n              The actual rendered columns are set as a property on the row definition\" -->\n      \n        <!-- No Column -->\n        <ng-container matColumnDef=\"attendance_uid\">\n          <th mat-header-cell *matHeaderCellDef> No. </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.attendance_uid }} </td>\n        </ng-container>\n      \n        <!-- StaffID Column -->\n        <ng-container matColumnDef=\"empName\">\n          <th mat-header-cell *matHeaderCellDef> Staff ID </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.empName }} </td>\n        </ng-container>\n      \n        <!-- Time Column -->\n        <ng-container matColumnDef=\"clockIn\">\n          <th mat-header-cell *matHeaderCellDef> Clock In </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.clockIn }} </td>\n        </ng-container>\n      \n        <!-- Lateness Column -->\n        <ng-container matColumnDef=\"lateness\">\n          <th mat-header-cell *matHeaderCellDef> Lateness </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.lateness }} </td>\n        </ng-container>\n      \n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n      </table>\n  </mat-card>\n\n  <mat-card class=\"mc\">\n    <mat-card-title>Medical Leave</mat-card-title>\n    \n    <table mat-table [dataSource]=\"MC_Table\" class=\"mat-elevation-z8\">\n      <!-- StaffID Column -->\n      <ng-container matColumnDef=\"staffID\">\n        <th mat-header-cell *matHeaderCellDef>Staff ID</th>\n        <td mat-cell *matCellDef=\"let element\">{{ element.staffID }}</td>\n      </ng-container>\n\n      <!-- Status Column -->\n      <ng-container matColumnDef=\"status\">\n          <th mat-header-cell *matHeaderCellDef> Status </th>\n          <td mat-cell *matCellDef=\"let element\"> {{ element.status }}</td>\n        </ng-container>\n      \n      <tr mat-header-row *matHeaderRowDef=\"displayedColumns1\"></tr>\n      <tr mat-row *matRowDef=\"let row; columns: displayedColumns1;\"></tr>\n\n    </table>\n  \n  </mat-card>\n  \n  <mat-card class=\"al\">\n    <mat-card-title>Annual Leave</mat-card-title>\n    <table mat-table [dataSource]=\"AL_Table\" class=\"mat-elevation-z8\">\n        <!-- StaffID Column -->\n        <ng-container matColumnDef=\"staffID\">\n          <th mat-header-cell *matHeaderCellDef>Staff ID</th>\n          <td mat-cell *matCellDef=\"let element\">{{ element.staffID }}</td>\n        </ng-container>\n\n        <!-- Status Column -->\n        <ng-container matColumnDef=\"status\">\n            <th mat-header-cell *matHeaderCellDef> Status </th>\n            <td mat-cell *matCellDef=\"let element\"> {{ element.status }} </td>\n          </ng-container>\n        \n        <tr mat-header-row *matHeaderRowDef=\"displayedColumns2\"></tr>\n        <tr mat-row *matRowDef=\"let row; columns: displayedColumns2;\"></tr>\n  \n      </table>\n  </mat-card>\n  \n  <mat-card class=\"pending\">\n      <mat-card-title>Pending</mat-card-title>\n      <table mat-table [dataSource]=\"Pending\" class=\"mat-elevation-z8\">\n        <!-- No Column -->\n          <ng-container matColumnDef=\"no\">\n              <th mat-header-cell *matHeaderCellDef> No. </th>\n              <td mat-cell *matCellDef=\"let element\"> {{ element.no }} </td>\n            </ng-container>\n        <!-- StaffID Column -->\n          <ng-container matColumnDef=\"staffID\">\n            <th mat-header-cell *matHeaderCellDef>Staff ID</th>\n            <td mat-cell *matCellDef=\"let element\">{{ element.staffID }}</td>\n          </ng-container>\n          \n          \n          <tr mat-header-row *matHeaderRowDef=\"displayedColumns3\"></tr>\n          <tr mat-row *matRowDef=\"let row; columns: displayedColumns3;\"></tr>\n    \n        </table>\n    </mat-card>\n\n\n</div>"
 
 /***/ }),
 
@@ -466,34 +466,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var ELEMENT_DATA = [
-    { no: 1, staffID: 'taaron', time: 8.45, status: 'On Time' },
-    { no: 2, staffID: 'tlucas', time: 9.00, status: 'On Time' },
-    { no: 3, staffID: 'tjoshua', time: 9.05, status: 'Late' },
-    { no: 4, staffID: 'tlester', time: 8.50, status: 'On Time' },
-    { no: 5, staffID: 'tnirmal', time: 9.03, status: 'Late' },
-    { no: 6, staffID: 'tvivek', time: 9.03, status: 'Late' },
-    { no: 7, staffID: 'tsujono', time: 9.45, status: 'Late' },
-    { no: 8, staffID: 'tzulfakar', time: 9.00, status: 'On Time' },
-    { no: 9, staffID: 'ttuan', time: 8.55, status: 'On Time' },
-    { no: 10, staffID: 'thelmi', time: 9.10, status: 'Late' },
-];
-var MC_DATA = [
-    { staffID: 'taaron', status: 'Approved' },
-    { staffID: 'tlucas', status: 'Rejected' }
-];
-var AL_DATA = [
-    { staffID: 'taaron', status: 'Approved' },
-    { staffID: 'tlucas', status: 'Rejected' }
-];
+var ELEMENT_DATA = [];
+var MC_DATA = [];
+var AL_DATA = [];
 var PENDING_DATA = [
-    { no: 1, staffID: 'taaron' },
-    { no: 2, staffID: 'tlucas' }
+// { no: 1, staffID: 'taaron'},
+// { no: 2, staffID: 'tlucas'}
 ];
 var TableComponent = /** @class */ (function () {
     function TableComponent(httpService) {
         this.httpService = httpService;
-        this.displayedColumns = ['no', 'staffID', 'time', 'status'];
+        this.displayedColumns = ['attendance_uid', 'empName', 'clockIn', 'lateness'];
         this.displayedColumns1 = ['staffID', 'status'];
         this.displayedColumns2 = ['staffID', 'status'];
         this.displayedColumns3 = ['no', 'staffID'];
@@ -509,7 +492,7 @@ var TableComponent = /** @class */ (function () {
         var _this = this;
         this.httpService.getAllEmployeeData().then(function (data) {
             _this.checkIn = data;
-            console.log(data);
+            console.log(_this.checkIn);
         });
     };
     TableComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
