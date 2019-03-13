@@ -4,7 +4,7 @@ import { MatTableDataSource, MAT_AUTOCOMPLETE_DEFAULT_OPTIONS_FACTORY } from '@a
 
 export interface CheckIn {
   attendance_uid: number;
-  empName: string;
+  employeeName: string;
   time: string;
   // status: string;
 }
@@ -46,7 +46,7 @@ const PENDING_DATA: Pending[] = [
 })
 export class TableComponent implements OnInit {
 
-  displayedColumns: string[] = ['attendance_uid', 'empName', 'clockIn', 'lateness'] ;
+  displayedColumns: string[] = ['attendance_uid', 'employeeName', 'clockIn', 'lateness'] ;
   displayedColumns1: string[] = ['staffID' , 'status'];
   displayedColumns2: string[] = ['staffID' , 'status'];
   displayedColumns3: string[] = ['no', 'staffID'];
