@@ -58,7 +58,7 @@ export class TableComponent implements OnInit {
   constructor(private httpService: HttpService) {}
 
   ngOnInit() {
-    this.getAllEmployeeData();
+    setinterval(()=> this.getAllEmployeeData(),5000);
   }
 
   public getAllEmployeeData() {

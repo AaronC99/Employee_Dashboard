@@ -3,7 +3,7 @@ var app = express();
 var http = require('http');
 var port = 8000;
 
-app.use(express.static(__dirname + '/web/dist/COEEATS'));
+app.use(express.static(__dirname + '/web/dist/CoEEATS'));
 
 var httpServer = http.createServer(app);
 
