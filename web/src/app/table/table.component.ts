@@ -12,26 +12,9 @@ export interface CheckIn {
 const ELEMENT_DATA: CheckIn[] = [
 ];
 
-export interface MC {
-  staffID: string;
-  status: string;
-}
-
-const MC_DATA: MC[] = [
-];
-
-export interface AL {
-  staffID: string;
-  status: string;
-}
-
-const AL_DATA: AL[] = [
-
-];
-
 export interface Pending {
-  no: number;
-  staffID: string;
+  employee_uid: number;
+  employeeName: string;
 }
 
 const PENDING_DATA: Pending[] = [
@@ -47,24 +30,28 @@ const PENDING_DATA: Pending[] = [
 export class TableComponent implements OnInit {
 
   displayedColumns: string[] = ['attendance_uid', 'employeeName', 'clockIn', 'lateness'] ;
-  displayedColumns1: string[] = ['staffID' , 'status'];
-  displayedColumns2: string[] = ['staffID' , 'status'];
-  displayedColumns3: string[] = ['no', 'staffID'];
+  displayedColumns3: string[] = ['employee_uid', 'employeeName'];
   checkIn = ELEMENT_DATA;
-  MC_Table = JSON.parse(localStorage.getItem('MC_SAVED'));
-  AL_Table = JSON.parse(localStorage.getItem('AL_SAVED'));
   Pending = PENDING_DATA;
 
   constructor(private httpService: HttpService) {}
 
   ngOnInit() {
-    setInterval(()=> this.getAllEmployeeData(),1500);
+    setInterval(() => this.getAllEmployeeData(), 3000);
+    setInterval(() => this.getPendingData(), 3000);
   }
 
   public getAllEmployeeData() {
     this.httpService.getAllEmployeeData().then((data: CheckIn[]) => {
       this.checkIn = data;
       console.log(this.checkIn);
+    });
+  }
+
+  public getPendingData() {
+    this.httpService.getPendingData().then((data1: Pending[]) => {
+      this.Pending = data1;
+      console.log(this.Pending);
     });
   }
 

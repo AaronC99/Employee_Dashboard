@@ -12,4 +12,7 @@ export class HttpService {
   getAllEmployeeData() {
     return this.httpClient.get(`${this.apiURL}/api/attendance`).toPromise();
   }
+  getPendingData() {
+    return this.httpClient.get(`${this.apiURL}/api/pending`).toPromise();
+  }
 }
