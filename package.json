@@ -12,7 +12,10 @@
   "private": true,
   "dependencies": {
     "Express": "^3.0.1",
+    "bootstrap": "^4.3.1",
+    "bower": "^1.8.8",
     "express": "^4.16.4",
+    "moment": "^2.24.0",
     "node-modules": "^1.0.1",
     "sqlite3": "^4.0.6"
   },

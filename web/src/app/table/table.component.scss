@@ -1,25 +1,52 @@
 .mat-card-title{
-  font-size: 30px;
+  font-size: 40px;
+  color:white;
+  font-family: sans-serif;
 }
 table {
     width: 100%;
   }
-.container{
-  justify-content: center;
-  align-content: center;
-  padding: 40px;
-  display: flex;
-
-  .mat-card{
-    width: 60%;
-    background-color:lightgrey;
-  }
-  .pending{
-    width: 20%;
-  }
-} 
-.top{
-  padding-left: 30px;
-  padding-bottom: 10px;
+.parentDiv {
+  margin: 50px;
+}
+.red {
+  color:red !important;
+}
+.green {
+  color:green !important;
+}
+.cheader{
+  width: 60%;
+  border-radius: 20px;
   text-align: center;
+  background-color: lightgrey;
+  background-image: linear-gradient(-90deg, #355C7D, #6c5b7b,#c06c84);
+  margin-bottom: 20px;
+  width: 100%;
+}
+h1{
+  display: inline;
+  color:white;
+  font-size: 111px;
+  font-family: sans-serif;
+}
+.checkIn{
+  background-color:lightgrey;
+  border-radius: 20px;
+  background-color: lightgrey;
+  background-image: linear-gradient(-90deg, #355C7D, #6c5b7b,#c06c84);
+}
+.col-md-4{
+  background-color:lightgrey;
+  border-radius: 20px;
+  background-color: lightgrey;
+  background-image: linear-gradient(-90deg, #c06c84, #6c5b7b, #355C7D);
+}
+.mat-cell{
+  font-size: 22px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.mat-header-cell{
+  font-size: 25px;
+  font-family: Helvetica;
 }

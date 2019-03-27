@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
-import { HeaderComponent } from './header/header.component';
 import { MatInputModule, MatToolbarModule, MatSelectModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,7 +24,6 @@ import { HttpService } from './http.service';
   declarations: [
     AppComponent,
     TableComponent,
-    HeaderComponent,
     RequestFormComponent
   ],
   imports: [
@@ -45,7 +43,7 @@ import { HttpService } from './http.service';
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDatepickerModule
+    MatDatepickerModule,
   ],
   entryComponents: [
     RequestFormComponent

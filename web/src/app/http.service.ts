@@ -15,4 +15,7 @@ export class HttpService {
   getPendingData() {
     return this.httpClient.get(`${this.apiURL}/api/pending`).toPromise();
   }
+  getPListEmployeeData() {
+    return this.httpClient.get(`${this.apiURL}/api/listEmployee`).toPromise();
+  }
 }
