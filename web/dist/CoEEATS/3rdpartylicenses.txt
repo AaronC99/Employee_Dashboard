@@ -347,6 +347,8 @@ MIT
 
 @angular/material/card
 
+@angular/material/progress-spinner
+
 zone.js
 MIT
 The MIT License

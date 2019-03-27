@@ -11,6 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { RequestFormComponent } from './request-form/request-form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -44,6 +45,7 @@ import { HttpService } from './http.service';
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
+    MatProgressSpinnerModule
   ],
   entryComponents: [
     RequestFormComponent

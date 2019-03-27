@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpService } from '../http.service';
-import { MatTableDataSource, MAT_AUTOCOMPLETE_DEFAULT_OPTIONS_FACTORY } from '@angular/material';
+import { MatTableDataSource, MAT_AUTOCOMPLETE_DEFAULT_OPTIONS_FACTORY, MatSort, MatProgressSpinner } from '@angular/material';
 import { element } from '@angular/core/src/render3';
 import { Observable } from 'rxjs/internal/Observable';
 import { rowsAnimation } from '../animations/template.animations';
+import { of } from 'rxjs';
+import { delay } from 'q';
 
 export interface CheckIn {
   attendance_uid: number;
@@ -28,6 +30,8 @@ const PENDING_DATA: Pending[] = [];
   animations: [rowsAnimation]
 })
 export class TableComponent implements OnInit {
+  @ViewChild(MatSort) sort: MatSort;
+  // Varibale Declaration
   time: any = new Observable(observer =>
     window.setInterval(() => observer.next(new Date().toString()), 1000).toString
   );
@@ -39,12 +43,16 @@ export class TableComponent implements OnInit {
   numofClockIn: number;
   numofPending: number;
   numofLateness: any;
+  isLoading = true;
+
   constructor(private httpService: HttpService) {}
 
   ngOnInit() {
   setInterval(() => this.getAllEmployeeData(), 3000);
   setInterval(() => this.getPendingData(), 3000);
   // this.getAttendanceData();
+
+
   }
 
   public getAllEmployeeData() {
@@ -58,7 +66,11 @@ export class TableComponent implements OnInit {
 
   public getPendingData() {
     this.httpService.getPendingData().then((data1: Pending[]) => {
-      this.Pending = data1;
+      of(PENDING_DATA).subscribe(data => {
+        this.isLoading = false;
+        this.Pending = data1;
+      }, error => this.isLoading = false
+      );
       this.dataPending = new MatTableDataSource<Pending>(this.Pending);
       this.numofPending = this.Pending.length;
       console.log(this.Pending);
