@@ -10,36 +10,35 @@
         Check In Total: {{ numofClockIn }}
         <h2 style="float:right;margin: 11px;">Late: {{ numofLateness }}</h2>
       </mat-card-title>
-      <table mat-table [dataSource]="checkIn" class="mat-elevation-z8" matSortActive="desc">
-
+      <table mat-table [dataSource]="checkIn" class="mat-elevation-z8">
         <!-- No Column -->
         <ng-container matColumnDef="attendance_uid">
           <th mat-header-cell *matHeaderCellDef> No. </th>
           <td mat-cell *matCellDef="let i = index"> {{ numofClockIn - i }} </td>
         </ng-container>
-
         <!-- StaffID Column -->
         <ng-container matColumnDef="employeeName">
           <th mat-header-cell *matHeaderCellDef> Staff ID </th>
           <td mat-cell *matCellDef="let element"> {{ element.employeeName }} </td>
         </ng-container>
-
         <!-- Time Column -->
         <ng-container matColumnDef="clockIn">
           <th mat-header-cell *matHeaderCellDef> Clock In </th>
           <td mat-cell *matCellDef="let element"> {{ element.clockIn }} </td>
         </ng-container>
-
         <!-- Lateness Column -->
         <ng-container matColumnDef="lateness">
           <th mat-header-cell *matHeaderCellDef> Lateness </th>
           <td mat-cell *matCellDef="let element" [ngClass]="element.lateness.substring(0,1) === '-' ?'green':'red'">
             {{ element.lateness.substring(0,1) === '-' ? 'On Time' : element.lateness+ ' (Late)' }} </td>
         </ng-container>
-
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
+      <mat-card *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center">
+        <mat-progress-spinner color="primary" mode="indeterminate">
+        </mat-progress-spinner>
+      </mat-card>
     </mat-card>
   </div>
 
@@ -59,5 +58,9 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns3;"></tr>
     </table>
+    <mat-card *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center">
+      <mat-progress-spinner color="primary" mode="indeterminate">
+      </mat-progress-spinner>
+    </mat-card>
   </mat-card>
 </div>

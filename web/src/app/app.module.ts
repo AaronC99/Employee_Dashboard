@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatNativeDateModule } from '@angular/material';
 import { HttpService } from './http.service';
 
@@ -27,6 +28,7 @@ import { HttpService } from './http.service';
     MatNativeDateModule,
     RouterModule,
     MatCardModule,
+    MatProgressSpinnerModule
   ],
   entryComponents: [],
   providers: [HttpService],

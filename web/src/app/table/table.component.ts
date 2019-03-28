@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { HttpService } from '../http.service';
 import { MatTableDataSource } from '@angular/material';
 import { Observable } from 'rxjs/internal/Observable';
+import { of } from 'rxjs/internal/observable/of';
+import { delay } from 'q';
 
 export interface CheckIn {
   attendance_uid: number;
@@ -37,6 +39,7 @@ export class TableComponent implements OnInit {
   numofClockIn: number;
   numofPending: number;
   numofLateness: any;
+  isLoading = true;
 
   constructor(private httpService: HttpService) {}
   ngOnInit() {
@@ -55,7 +58,11 @@ export class TableComponent implements OnInit {
 
   public getPendingData() {
     this.httpService.getPendingData().then((data1: Pending[]) => {
+      of(PENDING_DATA).pipe()
+     .subscribe(data => {
       this.Pending = data1;
+      this.isLoading = false;
+     }, error => this.isLoading = false);
       this.dataPending = new MatTableDataSource<Pending>(this.Pending);
       this.numofPending = this.Pending.length;
       console.log(this.Pending);
